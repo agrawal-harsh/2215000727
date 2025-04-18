@@ -1,6 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 const NodeCache = require('node-cache');
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -9,6 +10,8 @@ const cache = new NodeCache({ stdTTL: 300 });
 
 const BASE_URL = 'http://localhost:3001/evaluation-service';
 
+
+app.use(cors());
 async function fetchWithCache(url, cacheKey, ttl = 300) {
   const cachedData = cache.get(cacheKey);
   if (cachedData) {
@@ -32,7 +35,7 @@ async function getAllUsers() {
   const data = await fetchWithCache(`${BASE_URL}/users`, 'all_users');
   return data.users;
 }
-r
+
 async function getUserPosts(userId) {
   const data = await fetchWithCache(`${BASE_URL}/users/${userId}/posts`, `user_posts_${userId}`);
   return data.posts || [];
