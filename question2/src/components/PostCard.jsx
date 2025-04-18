@@ -3,11 +3,9 @@ import React, { useState, useEffect } from 'react';
 const PostCard = ({ post }) => {
   const [expanded, setExpanded] = useState(false);
   
-  // Generate random image for post
-  const imageUrl = `/api/placeholder/${600 + Math.floor(Math.random() * 100)}/${400 + Math.floor(Math.random() * 100)}`;
+  const imageUrl = `https://i.pravatar.cc/150?img=${1 + Math.floor(Math.random() * 10)}'`;
   
-  // Generate random avatar for user
-  const avatarUrl = `/api/placeholder/50/50`;
+  const avatarUrl = `https://i.pravatar.cc/150?img=${1 + Math.floor(Math.random() * 10)}'`;
 
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
@@ -73,7 +71,7 @@ const PostCard = ({ post }) => {
                 <div key={i} className="flex space-x-3">
                   <img 
                     className="h-8 w-8 rounded-full object-cover" 
-                    src={`/api/placeholder/50/50`}
+                    src={avatarUrl}
                     alt="User avatar" 
                   />
                   <div className="bg-gray-100 rounded-lg p-3 flex-1">

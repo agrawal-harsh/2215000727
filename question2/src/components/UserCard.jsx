@@ -1,8 +1,7 @@
 import React from 'react';
 
-const UserCard = ({ user }) => {
-  // Generate a random avatar using a placeholder service
-  const avatarUrl = `/api/placeholder/150/150`;
+const UserCard = ({ user }) => {  
+  const avatarUrl = `https://i.pravatar.cc/150?img=${1 + Math.floor(Math.random() * 10)}'`;
   
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
