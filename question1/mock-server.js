@@ -3,7 +3,6 @@ const express = require('express');
 const app = express();
 const PORT = 3001;
 
-// Mock data
 const users = {
   "users": {
     "1": "harsh",
